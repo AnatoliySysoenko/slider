@@ -6,6 +6,7 @@ node_modules/
 yarn.lock
 package-lock.json
 .csscomb.json
+.eslintrc
 gulpfile.js
 .csscomb.json
 .yarn.package.json
