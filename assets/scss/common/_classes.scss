@@ -1,0 +1,135 @@
+.container {
+  position: relative;
+  max-width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+.slides {
+  position: relative;
+  height: 100vh;
+  display: block;
+  @include unlist;
+}
+
+.slide {
+  z-index: -999;
+  @include abs-position;
+  opacity: 0;
+  font-size: 40px;
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:nth-of-type(1) {
+    background-image: url(../../assets/img/1.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(2) {
+    background-image: url(../../assets/img/2.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(3) {
+    background-image: url(../../assets/img/3.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(4) {
+    background-image: url(../../assets/img/4.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(5) {
+    background-image: url(../../assets/img/5.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.controls {
+  //display: flex;
+  gap: 10px;
+}
+
+.control {
+  color: white;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+
+  &-pause {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    opacity: 0;
+    transition: opacity 2s, box-shadow 1s;
+    border-radius: 150px;
+
+
+    &:hover {
+      @include box-shadow;
+      opacity: 1;
+    }
+  }
+
+  &-prev {
+    position: absolute;
+    transform: translate(0, -50%);
+    height: 100%;
+    padding: 0 40px 0 20px;
+
+    &:hover {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    }
+  }
+
+  &-next {
+    position: absolute;
+    right: 0;
+    transform: translate(0, -50%);
+    padding: 0 20px 0 40px;
+    height: 100%;
+    transition: 1s;
+
+    &:hover {
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    }
+  }
+}
+
+.indicators {
+  position: absolute;
+  bottom: 1%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.indicator {
+  height: 10px;
+  width: 40px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+
+  &.active {
+    background-color: #ffffff;
+  }
+}
